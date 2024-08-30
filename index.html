@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculador de Contenedores Fenix</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>App Volumen Fenix</h1>
+        <form id="calculator-form">
+            <h2>Dimensiones de las Cajas</h2>
+            <div id="box-section" class="section">
+                <label for="box-width">Ancho de la caja </label>
+                <input type="number" id="box-width" min="1" placeholder="cm" required>
+                <label for="box-height">Alto de la caja </label>
+                <input type="number" id="box-height" min="1" placeholder="cm" required>
+                <label for="box-length">Largo de la caja </label>
+                <input type="number" id="box-length" min="1" placeholder="cm" required>
+                <label for="quantity">Cantidad de cajas:</label>
+                <input type="number" id="quantity" min="1" placeholder="cm" required>
+                <button type="button" onclick="addBox()">Agregar Caja</button>
+            </div>
+
+            <div class="section">
+                <h2>Dimensiones del Contenedor a Empacar</h2>
+                <label for="container-width">Ancho del contenedor </label>
+                <input type="number" id="container-width"placeholder="cm"  min="1" required>
+                <label for="container-height">Alto del contenedor </label>
+                <input type="number" id="container-height"placeholder="cm"  min="1" required>
+                <label for="container-length">Largo del contenedor </label>
+                <input type="number" id="container-length" placeholder="cm" min="1" required>
+                <button type="button" onclick="calculate()">Calcular</button>
+                <button type="button" onclick="window.location.reload()">Reiniciar</button>
+            </div>
+
+            <div class="Valores" id="Envio">
+                <h2>Valores</h2>
+                <label for="valor">Valor en pesos</label>
+                <input type="number" id="valor" placeholder="$" min="1" >
+                <button type="button" onclick="calculatePrecio()">Calcular</button>
+
+
+            </div>
+
+
+        </form>
+        <div id="result" class="result"></div>
+        <canvas id="containerChart" width="400" height="200"></canvas> <!-- Lienzo para el gráfico -->
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Inclusión de Chart.js -->
+    <script src="script.js"></script> <!-- Archivo JavaScript -->
+</body>
+</html>
